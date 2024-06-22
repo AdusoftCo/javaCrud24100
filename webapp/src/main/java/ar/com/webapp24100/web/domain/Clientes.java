@@ -2,15 +2,15 @@ package ar.com.webapp24100.web.domain;
 
 public class Clientes {
 
-    private long id;
+    private Long id;
     private String nombre;
     private String apellido;
     private String email;
     private String imagen;
-    private long tipoClienteId;
+    private Long tipoClienteId;
     
     //Para Obtener desde la DB
-    public Clientes(long id, String nombre, String apellido, String email, String imagen, long tipoClienteId) {
+    public Clientes(Long id, String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -20,7 +20,7 @@ public class Clientes {
     }
 
     //Para Crear en la DB
-    public Clientes(String nombre, String apellido, String email, String imagen, long tipoClienteId) {
+    public Clientes(String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -32,7 +32,7 @@ public class Clientes {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,10 +72,8 @@ public class Clientes {
         return tipoClienteId;
     }
 
-    public void setTipoClienteId(long tipoClienteId) {
+    public void setTipoClienteId(Long tipoClienteId) {
         this.tipoClienteId = tipoClienteId;
     }
-
-    
     
 }

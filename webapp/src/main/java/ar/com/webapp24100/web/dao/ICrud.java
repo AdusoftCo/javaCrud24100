@@ -7,4 +7,5 @@ public interface ICrud {
     //Este es el QUE
     public Clientes getById(long id);
     //esto es el: select * from clientes where id=?
+    
 }

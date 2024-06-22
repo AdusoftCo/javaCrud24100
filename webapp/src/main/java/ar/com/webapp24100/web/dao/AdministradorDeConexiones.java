@@ -1,14 +1,13 @@
 package ar.com.webapp24100.web.dao;
-
-import java.sql.Connection;
 //D.A.O.(dao) = Data Access Object
+import java.sql.Connection;
+
 import java.sql.DriverManager;
 
 public class AdministradorDeConexiones {
-    private Connection connection;
-
-    //Obtener una Conexion
-    public Connection conectar() {
+    
+    //Obtener una Conexion / -> ALGO que es (static) NO TIENE this.algo
+    public static Connection conectar() {
         //toda la logica para obtener Conexion!
         String url = "jdbc:mysql://127.0.0.1:3306/24100CaC?serverTimeZone=UTC&userSSL=false";
         String user = "root";
@@ -16,7 +15,7 @@ public class AdministradorDeConexiones {
         //Como usamos JDBC necesito decirle ke driver voy a usar:Mysql
         String driver = "com.mysql.cj.jdbc.Driver";
 
-        //Connection connection = null;
+        Connection connection = null;
 
         //Como puede dar Error tonces try/catch
         try {
@@ -25,7 +24,7 @@ public class AdministradorDeConexiones {
             Class.forName(driver);
             
             //Ahora que ya tengo el driver. ME CONECTO
-            this.connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, password);
 
         } catch (Exception e) {
             // SI Falla
@@ -35,22 +34,14 @@ public class AdministradorDeConexiones {
         return connection;
     }
 
-    public void desconectar() {
+    public static void desconectar(Connection connection) {
         //Controlo el posible Error del metodo Close()
         try {
-            this.connection.close();    
+            connection.close();    
         } catch (Exception e) {
             System.err.println(e);
         }
         
     }
-
-    public static void main(String[] args) {
-        //Como hago la prueba de conectar a DB?
-        //1- Crear instancia de AdmDeConec()
-        AdministradorDeConexiones adm = new AdministradorDeConexiones();
-        //2- llamo a conectar
-        adm.conectar();
-        adm.desconectar();
-    }
+    
 }
