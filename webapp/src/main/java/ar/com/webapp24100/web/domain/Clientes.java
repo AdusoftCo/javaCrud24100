@@ -75,5 +75,12 @@ public class Clientes {
     public void setTipoClienteId(Long tipoClienteId) {
         this.tipoClienteId = tipoClienteId;
     }
+
+    
+    public String toString() {
+        return "Clientes [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", imagen="
+                + imagen + ", tipoClienteId=" + tipoClienteId + "]";
+    }
+    
     
 }

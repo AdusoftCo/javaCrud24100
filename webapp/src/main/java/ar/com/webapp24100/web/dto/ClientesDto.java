@@ -1,7 +1,7 @@
 package ar.com.webapp24100.web.dto;
 
 //Son objetos INMUTABLES por que NACE y se keda con los atributos
-public class ClientesDTO {
+public class ClientesDto {
     private Long id;
     private String nombre;
     private String apellido;
@@ -9,8 +9,17 @@ public class ClientesDTO {
     private String imagen;
     private Long tipoClienteId;
 
-    public ClientesDTO(Long id, String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
+    public ClientesDto(Long id, String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
         this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.imagen = imagen;
+        this.tipoClienteId = tipoClienteId;
+    }
+
+    public ClientesDto(String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
+        //this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -40,6 +49,27 @@ public class ClientesDTO {
 
     public Long getTipoClienteId() {
         return tipoClienteId;
+    }
+
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public void setTipoClienteId(Long tipoClienteId) {
+        this.tipoClienteId = tipoClienteId;
     }
         
 }

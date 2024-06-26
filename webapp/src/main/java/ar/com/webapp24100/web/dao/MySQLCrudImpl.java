@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import ar.com.webapp24100.web.domain.Clientes;
+import ar.com.webapp24100.web.dto.ClientesDto;
 
 public class MySQLCrudImpl implements ICrud {
 
@@ -32,7 +33,7 @@ public class MySQLCrudImpl implements ICrud {
                 Long idCliente = resultSet.getLong(1);
                 String nombre = resultSet.getString(2);
                 String apellido = resultSet.getString(3);
-                String email = resultSet.getString(4)
+                String email = resultSet.getString(4);
                 String imagen = resultSet.getString(5);
                 Long tipoClienteId = resultSet.getLong(6);
                 
@@ -47,6 +48,31 @@ public class MySQLCrudImpl implements ICrud {
         }
 
         return cliente;
+    }
+
+    
+    public void create(ClientesDto dto) {
+        String sql = "INSERT INTO clientes(nombre, apellido, email, imagen, clientes_tipo_id) VALUES(?, ?, ?, ?, ?)";
+    
+        Connection connection = AdministradorDeConexiones.conectar();
+
+        try {
+            PreparedStatement pst = connection.prepareStatement(sql);
+            //Seteo en orden cada parametro
+            pst.setString(1, dto.getNombre());
+            pst.setString(2, dto.getApellido());
+            pst.setString(3, dto.getEmail());
+            pst.setString(4, dto.getImagen());
+            pst.setLong(5, dto.getTipoClienteId());
+            pst.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            AdministradorDeConexiones.desconectar(connection);
+        }
+
+
     }
        
 }

@@ -2,19 +2,20 @@ package ar.com.webapp24100.web.service;
 
 import ar.com.webapp24100.web.dao.ICrud;
 import ar.com.webapp24100.web.dao.MySQLCrudImpl;
-import ar.com.webapp24100.web.dto.ClientesDTO;
+import ar.com.webapp24100.web.domain.Clientes;
+import ar.com.webapp24100.web.dto.ClientesDto;
 
-public class MovieService {
+public class ClientesService {
 
     private ICrud crud;  //Vale null=muerto, por que no es primitivo
 
-    public MovieService() {
+    public ClientesService() {
         //Interface nombre = new ClaseQueImplementaLaInterface()
         crud = new MySQLCrudImpl();
     }
 
-    public void crearCliente(ClientesDTO dto) {
-        //this.crud.getById(null);
+    public void crearCliente(ClientesDto dto) {
+        this.crud.create(dto);
     }
 
     public Clientes obtenerClientePorId(Long id) {
