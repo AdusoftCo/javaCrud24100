@@ -11,15 +11,15 @@ public class crearClientesController {
     public static void main(String[] args) {
         //Aca quiero Crear un cliente en la DB
         //Long id = 1l;  //recibo desde el request que envio algun Frontend
-        String nombre = "Jane";
-        String apellido = "Fernandez D.";
-        String email = "janere_645@hotmail.com";
-        String imagen = "/imagenes/kity.jpg";
+        String nombre = "Ximena";
+        String apellido = "Aduviri Fernandez";
+        String email = "xime@gmail.com";
+        String imagen = "/imagenes/lina.jpg";
         Long tipoClientesId = 1l;
 
         //Agregar Validaciones-y esto seria desde el Backend!!
         if (nombre == null || nombre.isBlank()){
-            //ACA HAY UN ERROR!
+            //ACA HABRIA UN ERROR!
             return;
         }
          
