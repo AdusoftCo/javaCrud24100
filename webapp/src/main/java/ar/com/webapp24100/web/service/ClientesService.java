@@ -32,8 +32,8 @@ public class ClientesService {
         return this.crud.findAll();
     }
 
-    public void actualizarCliente(ClientesDto cliente) {
+    /*public void actualizarCliente(ClientesDto cliente) {
         this.crud.update();
-    }
+    }*/
 
 }

@@ -1,6 +1,6 @@
-package ar.com.webapp24100.web.controllers;
+/*package ar.com.webapp24100.web.controllers;
 
-import ar.com.webapp24100.web.domain.Clientes;
+//import ar.com.webapp24100.web.domain.Clientes;
 import ar.com.webapp24100.web.dto.ClientesDto;
 import ar.com.webapp24100.web.service.ClientesService;
 
@@ -23,3 +23,4 @@ public class actualizarClientesController {
         service.actualizarCliente(cliente);
     }
 }
+*/

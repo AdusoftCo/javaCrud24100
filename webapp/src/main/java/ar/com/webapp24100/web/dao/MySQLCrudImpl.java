@@ -138,7 +138,7 @@ public class MySQLCrudImpl implements ICrud {
         return clientes;
     }
    
-    //Actualizo un registro
+    /*Actualizo un registro
     public void update(ClientesDto cliente) {
         // Armo la sentencia SQL
         StringBuffer columnasSet = new StringBuffer("UPDATE clientes SET(");
@@ -163,6 +163,6 @@ public class MySQLCrudImpl implements ICrud {
         if (cliente.getTipoClienteId() != null) {
             columnasSet.append("clientes_tipo_id");
         }
-        columnasSet.append(") VALUES ()");
-    }
+        columnasSet.append(") VALUES () WHERE");
+    } */
 }

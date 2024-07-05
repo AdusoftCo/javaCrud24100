@@ -8,4 +8,13 @@
 >
     <display-name>Welcome to Tomcat</display-name>
     <description>Welcome to Tomcat</description>
+    
+    <filter>
+        <filter-name>corsFilter</filter-name>
+        <filter-class>ar.com.webapp24100.web.filters.corsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>corsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

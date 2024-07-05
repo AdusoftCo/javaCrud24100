@@ -9,6 +9,11 @@ public class ClientesDto {
     private String imagen;
     private Long tipoClienteId;
 
+    //Necesitamos un CONSTRUCTOR "VACIO" por defecto para poder usar JACKSON
+    public ClientesDto() {
+        
+    }
+
     public ClientesDto(Long id, String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
         this.id = id;
         this.nombre = nombre;
