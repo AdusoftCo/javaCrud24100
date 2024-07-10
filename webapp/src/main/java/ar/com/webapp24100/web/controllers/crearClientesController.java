@@ -17,31 +17,29 @@ import jakarta.servlet.http.HttpServletResponse;
 public class crearClientesController extends HttpServlet {
     
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
-        String jsonKeMandaElFront = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+    protected void doPost(
+        HttpServletRequest req, //esto tiene los datos del front
+        HttpServletResponse resp//va todo lo que el back quiera enviarle al front
+    ) throws ServletException, IOException {
+       
+        String jsonQueMandaElFront = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
-        System.out.println(jsonKeMandaElFront);
+        System.out.println(jsonQueMandaElFront);
         
-        //Usamos Jackson para convertir el texto QUE VIENE del FRONT en 
-        //Un objeto JAVA "magicamente" creado por
+        //usamos jackson para convertir el texto que viene desde el front en 
+        //un objecto java "magicamente" creado
         ObjectMapper mapper = new ObjectMapper();
-        
-        //Crea el DTO!!
-        ClientesDto dto = mapper.readValue(jsonKeMandaElFront, ClientesDto.class);
+
+        //crar el DTO
+        ClientesDto dto = mapper.readValue(jsonQueMandaElFront, ClientesDto.class);
 
         ClientesService service = new ClientesService();
-
-        //Crear el DTO
-                
+        
         service.crearCliente(dto);
-
+      
         //respondemos algo al front por medio del codigo de estado
         //http status code: 100,200,300,400,500
-        // Send success response
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().write("Cliente creado exitosamente");
-   
-        //resp.setStatus(HttpServletResponse.SC_CREATED);/////creado
-        }
+        
+        resp.setStatus(HttpServletResponse.SC_CREATED);/////creado
+    }
 }

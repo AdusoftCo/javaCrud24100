@@ -56,7 +56,7 @@ public class ClientesDto {
         return tipoClienteId;
     }
 
-    
+/*    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -76,5 +76,5 @@ public class ClientesDto {
     public void setTipoClienteId(Long tipoClienteId) {
         this.tipoClienteId = tipoClienteId;
     }
-        
+ */        
 }

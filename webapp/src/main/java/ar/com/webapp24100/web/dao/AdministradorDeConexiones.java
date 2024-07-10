@@ -9,7 +9,7 @@ public class AdministradorDeConexiones {
     //Obtener una Conexion / -> ALGO que es (static) NO TIENE this.algo
     public static Connection conectar() {
         //toda la logica para obtener Conexion!
-        String url = "jdbc:mysql://127.0.0.1:3306/24100CaC?serverTimeZone=UTC&userSSL=false";
+        String url = "jdbc:mysql://127.0.0.1:3306/24100cac?serverTimeZone=UTC&userSSL=false";
         String user = "root";
         String password = "";
         //Como usamos JDBC necesito decirle ke driver voy a usar:Mysql

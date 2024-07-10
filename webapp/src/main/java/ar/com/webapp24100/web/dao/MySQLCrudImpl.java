@@ -53,7 +53,7 @@ public class MySQLCrudImpl implements ICrud {
 
     //El COMO!!
     public void create(ClientesDto dto) {
-        String sql = "INSERT INTO clientes(nombre, apellido, email, imagen, clientes_tipos_id) VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clientes (nombre, apellido, email, imagen, clientes_tipos_id) VALUES (?, ?, ?, ?, ?)";
     
         Connection connection = AdministradorDeConexiones.conectar();
 

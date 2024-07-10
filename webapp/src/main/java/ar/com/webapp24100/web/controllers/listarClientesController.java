@@ -31,7 +31,7 @@ public class listarClientesController extends HttpServlet {
         String clientesJSON =  mapper.writeValueAsString(clientes);
 
         //Mostar por consola | Envia al front end
-
+        /* */
         // Configurar cabeceras CORS
         resp.setHeader("Access-Control-Allow-Origin", "*"); // Permitir acceso desde cualquier origen
         resp.setHeader("Access-Control-Allow-Methods", "*"); // Métodos permitidos(GET, POST, PUT, DELETE ...)

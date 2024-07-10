@@ -24,7 +24,7 @@ public class ClientesService {
         return this.crud.getById(id);
     }
 
-    public void eliminarClientesController(Long id) {
+    public void eliminarClientesPorID(Long id) {
         this.crud.delete(id);        
     }
 
