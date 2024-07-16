@@ -1,26 +1,34 @@
-/*package ar.com.webapp24100.web.controllers;
+package ar.com.webapp24100.web.controllers;
 
-//import ar.com.webapp24100.web.domain.Clientes;
+import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import ar.com.webapp24100.web.dto.ClientesDto;
 import ar.com.webapp24100.web.service.ClientesService;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-public class actualizarClientesController {
+@WebServlet("/actualizarClientesController")
+public class actualizarClientesController extends HttpServlet{
 
-    public static void main(String[] args) {
-        //Datos ke kiero actualizar, vienen desde el front
-        Long id = 2l;
-        String nombre = "Nuevo nombre";
-        String apellido = "Nuevo apellido";
-        String email = "nuevo@email.com";
-        String imagen = "bla/imag.jpg";
-        Long tipoClienteId = 2l;
+    @Override
+    protected void doPost(
+        HttpServletRequest req,
+        HttpServletResponse resp)
+    throws ServletException, IOException {
         
-        //Ahora lo de siempre
+        ObjectMapper mapper = new ObjectMapper();
+
+        //crar el DTO
+        ClientesDto dto = mapper.readValue(req.getReader(), ClientesDto.class);
+
         ClientesService service = new ClientesService();
-
-        ClientesDto cliente = new ClientesDto(id, nombre, apellido, email, imagen, tipoClienteId);
-
-        service.actualizarCliente(cliente);
+        
+        service.actualizarCliente(dto);
+      
+        resp.setStatus(HttpServletResponse.SC_CREATED);/////actualizado
     }
 }
-*/

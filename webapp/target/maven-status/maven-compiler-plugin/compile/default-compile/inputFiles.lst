@@ -16,11 +16,17 @@ c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\actualiz
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\crearClientesController.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\eliminarClientesController.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\listarClientesController.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\loginController.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\controllers\obtenerClientesController.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dao\AdministradorDeConexiones.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dao\ICrud.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dao\MySQLCrudImpl.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dao\UsuarioDAO.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dao\UsuarioDAOMysqlImpl.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\domain\Clientes.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\domain\Usuario.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dto\ClientesDto.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\dto\loginRequestDto.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\filters\CorsFilter.java
 c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\service\ClientesService.java
+c:\webapp-24100\webapp\src\main\java\ar\com\webapp24100\web\service\UsuarioService.java

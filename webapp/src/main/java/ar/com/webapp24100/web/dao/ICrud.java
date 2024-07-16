@@ -17,5 +17,5 @@ public interface ICrud {
 
     public ArrayList<Clientes> findAll();
 
-    //public void update();
+    public void update(ClientesDto cliente);
 }
