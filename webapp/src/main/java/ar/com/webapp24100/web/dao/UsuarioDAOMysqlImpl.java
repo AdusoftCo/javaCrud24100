@@ -19,6 +19,7 @@ public class UsuarioDAOMysqlImpl implements UsuarioDAO{
         Usuario usuario = null;
 
         Connection con = null;
+        
         try{
             con = AdministradorDeConexiones.conectar();
 

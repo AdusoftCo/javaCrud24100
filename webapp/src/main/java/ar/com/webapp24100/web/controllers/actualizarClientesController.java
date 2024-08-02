@@ -27,8 +27,16 @@ public class actualizarClientesController extends HttpServlet{
 
         ClientesService service = new ClientesService();
         
-        service.actualizarCliente(dto);
+        try {
+            service.actualizarCliente(dto);
+            resp.setStatus(HttpServletResponse.SC_OK); // Updated to SC_OK for update
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            resp.getWriter().write("{\"error\":\"" + e.getMessage() + "\"}");
+        }
+        //service.actualizarCliente(dto);
       
-        resp.setStatus(HttpServletResponse.SC_CREATED);/////actualizado
+        //resp.setStatus(HttpServletResponse.SC_CREATED);/////actualizado
     }
 }

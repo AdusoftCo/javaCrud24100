@@ -8,18 +8,18 @@ import ar.com.webapp24100.web.domain.Clientes;
 import ar.com.webapp24100.web.dto.ClientesDto;
 
 public class ClientesService {
-
+    
     private ICrud crud;  //Vale null=muerto, por que no es primitivo
-
+    
     public ClientesService() {
         //Interface nombre = new ClaseQueImplementaLaInterface()
         crud = new MySQLCrudImpl();
     }
 
-    public void crearCliente(ClientesDto dto) {
+    public void crearCliente(ClientesDto dto) throws Exception {
         this.crud.create(dto);
-    }
-
+    }    
+    
     public Clientes obtenerClientePorId(Long id) {
         return this.crud.getById(id);
     }

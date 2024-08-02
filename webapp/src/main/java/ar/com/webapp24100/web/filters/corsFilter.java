@@ -57,22 +57,3 @@ public class CorsFilter implements Filter {
         // Puedes hacer alguna limpieza aquí si es necesario
     }
 }
-/*
-		//Get the Origin header from the request
-        String origin = httpRequest.getHeader("Origin");
-        
-        // Check if the origin is allowed
-        if (origin != null && origins.contains(origin)) {
-            httpResponse.setHeader("Access-Control-Allow-Origin", origin);
-            httpResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
-            httpResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-            httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
-        }
-        chain.doFilter(request, response);
-        @Override
-    public void destroy() {
-        // This method is used to clean up any resources used by the filter
-    }
-		 */
-	
-

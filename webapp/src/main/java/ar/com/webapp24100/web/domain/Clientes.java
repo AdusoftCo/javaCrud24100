@@ -1,34 +1,45 @@
 package ar.com.webapp24100.web.domain;
 
+import java.time.LocalDate;
+
 public class Clientes {
 
     private Long id;
     private String nombre;
     private String apellido;
     private String email;
-    private String imagen;
+    private String password;
     private Long tipoClienteId;
+    private String imagen;
+    private String pais;
+    private LocalDate fechaNac;
     
     //Para Obtener desde la DB
-    public Clientes(Long id, String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
+    public Clientes(Long id, String nombre, String apellido, String email, String password, Long tipoClienteId, String imagen, String pais, LocalDate fechaNac) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.imagen = imagen;
         this.tipoClienteId = tipoClienteId;
+        this.imagen = imagen;
+        this.pais = pais;
+        this.fechaNac = fechaNac;
+
     }
 
     //Para Crear en la DB
-    public Clientes(String nombre, String apellido, String email, String imagen, Long tipoClienteId) {
+    public Clientes(String nombre, String apellido, String email, String password, Long tipoClienteId, String imagen, String pais, LocalDate fechaNac) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.imagen = imagen;
+        this.password = password;
         this.tipoClienteId = tipoClienteId;
+        this.imagen = imagen;
+        this.pais = pais;
+        this.fechaNac = fechaNac;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -60,6 +71,22 @@ public class Clientes {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public Long getTipoClienteId() {
+        return tipoClienteId;
+    }
+
+    public void setTipoClienteId(Long tipoClienteId) {
+        this.tipoClienteId = tipoClienteId;
+    }
+
     public String getImagen() {
         return imagen;
     }
@@ -68,19 +95,40 @@ public class Clientes {
         this.imagen = imagen;
     }
 
-    public long getTipoClienteId() {
-        return tipoClienteId;
+    public String getPais() {
+        return pais;
     }
 
-    public void setTipoClienteId(Long tipoClienteId) {
-        this.tipoClienteId = tipoClienteId;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    
+    public LocalDate getFechaNac() {
+        return fechaNac;
+    }
+
+    public void setFechaNac(LocalDate fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+        
     public String toString() {
-        return "Clientes [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", imagen="
-                + imagen + ", tipoClienteId=" + tipoClienteId + "]";
+        return "Clientes [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", password=" + password +  ", tipoClienteId=" 
+        + tipoClienteId + ", imagen=" + imagen + ", pais=" + pais + ", fechaNac=" + fechaNac + "]";
     }
     
+    /*@Override
+    public String toString() {
+        return "ClientesDto{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", fechaNac=" + fechaNac +
+                ", pais='" + pais + '\'' +
+                ", tipoClienteId=" + tipoClienteId +
+                ", imagen='" + imagen + '\'' +
+                '}';
+    } */
     
 }
